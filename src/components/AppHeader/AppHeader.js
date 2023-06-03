@@ -1,10 +1,10 @@
 import "./AppHeader.css"
 
-const AppHeader=()=>{
+const AppHeader=({like, allPosts})=>{
   return(
     <div className="app-header pt-3 pb-3  d-flex">
       <h1>Oybek Bakhtiyorov</h1>
-      <h2>5 posts, 0 like </h2>
+      <h2>{allPosts} posts,  like {like}</h2>
     </div>
   )
 }
