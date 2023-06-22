@@ -15,10 +15,10 @@ export default function App() {
 
   const [term, setTerm] = useState("");
   const [isFilter, setIsFilter] = useState("all");
-  const [maxId,setMaxId]=useState(4);
 
   const deleteItem = (id) => {
     setData((prevData) => {
+      console.log(id) 
       const index = prevData.findIndex((elem) => elem.id === id);
       const newArr = [...prevData.slice(0, index), ...prevData.slice(index + 1)];
       return newArr;
@@ -30,7 +30,7 @@ export default function App() {
     const newItem = {
       label: body,
       important: false,
-      id:setMaxId(maxId)
+      id:Math.round(Math.random()*100)
     };
     setData((prevData) => {
       const newArr = [...prevData, newItem];

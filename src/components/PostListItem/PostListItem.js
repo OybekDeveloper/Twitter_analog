@@ -2,16 +2,16 @@
   import React from "react";
     import "./PostListItem.css"
 
-  export default class PostListItem extends React.Component {
-    render() {
+  export default function PostListItem (props) {
+
       const {
         important,
         like,
         label,
-        onDalete,
+        onDelete,
         onToggleImportant,
         onToggleLiked,
-      } = this.props;
+      } = props;
       let classNames = "app-list-item d-flex justify-content-between";
       if (important) {
         classNames += " important";
@@ -33,7 +33,7 @@
             >
               <i className="add-list-start  fa fa-star "></i>
             </button>
-            <button type="button" onClick={onDalete} className="btn-trash btn-sm">
+            <button type="button" onClick={onDelete} className="btn-trash btn-sm">
               <i className="fa fa-trash"> </i>
             </button>
             <i className="fa fa-heart"> </i>
@@ -41,4 +41,4 @@
         </li>
       );
     }
-  }
+  
